@@ -14,7 +14,7 @@ export const Routing: FC<RoutingProps> = ({ from, to }) => {
   useEffect(() => {
     (async () => {
       const p = await RoutingService.getRoutes(from, to);
-      setState(p);
+      setState(p.resourceSets[0].resources[0].routePath.line.coordinates);
     })();
   }, [from, to]);
 
