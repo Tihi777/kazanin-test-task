@@ -6,7 +6,7 @@ import { TransportationRequest } from '../../../../shared/models/transportation-
 import { Destination } from '../../../../shared/models/destination';
 import { SelectableCell } from '../selectable-cell/selectable-cell';
 import { useAppDispatch } from '../../../../shared/stores/hooks';
-import { SelectTransportationRequest } from '../../../../shared/stores/transportaion-requests';
+import { SelectTransportationRequest, UpdateTransportationRequest } from '../../../../shared/stores/transportaion-requests';
 
 import './transportation-requests-table.scss';
 
@@ -23,6 +23,15 @@ export const TransportationRequestsTable: FC<TransportationRequestsTableProps> =
 }) => {
   const dispatch = useAppDispatch();
 
+  const handleSelectChange = (key: string) => (destinationId: number) => {
+    const destination = destinations.find((d) => d.id === destinationId);
+    dispatch(UpdateTransportationRequest({ [key]: destination }));
+  };
+
+  const handleRowClick = (record: TransportationRequest) => () => {
+    dispatch(SelectTransportationRequest(record.id));
+  };
+
   const columns: ColumnsType<TransportationRequest> = [
     {
       title: 'Номер',
@@ -38,18 +47,26 @@ export const TransportationRequestsTable: FC<TransportationRequestsTableProps> =
     {
       title: 'Погрузка',
       dataIndex: 'departurePlace',
-      render: (value) => <SelectableCell value={value.id} destinations={destinations} />,
+      render: (value, { arrivalPlace }) => (
+        <SelectableCell
+          value={value.id}
+          destinations={destinations.filter(({ id }) => id !== arrivalPlace.id)}
+          onChange={handleSelectChange('departurePlace')}
+        />
+      ),
     },
     {
       title: 'Разгрузка',
-      dataIndex: ['arrivalPlace', 'title'],
-      key: 'arrivalPlace',
+      dataIndex: 'arrivalPlace',
+      render: (value, { departurePlace }) => (
+        <SelectableCell
+          value={value.id}
+          destinations={destinations.filter(({ id }) => id !== departurePlace.id)}
+          onChange={handleSelectChange('arrivalPlace')}
+        />
+      ),
     },
   ];
-
-  const handleRowClick = (record: TransportationRequest) => () => {
-    dispatch(SelectTransportationRequest(record.id));
-  };
 
   return (
     <Table
@@ -59,7 +76,7 @@ export const TransportationRequestsTable: FC<TransportationRequestsTableProps> =
       size="large"
       scroll={{ x: 300 }}
       rowClassName={(record) => (record.id === activeTransportationRequest?.id ? 'active-cell' : '')}
-      onRow={(record, rowIndex) => {
+      onRow={(record) => {
         return {
           onClick: handleRowClick(record),
         };
