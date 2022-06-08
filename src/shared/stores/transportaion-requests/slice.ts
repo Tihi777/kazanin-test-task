@@ -1,17 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { TransportationRequest } from '../../models/transportation-request';
-import { GetTransportationRequests } from './actions';
+import { GetTransportationRequests, SelectTransportationRequest } from './actions';
 
 export interface TransportationRequestsState {
   transportationRequests: TransportationRequest[];
   isLoading: boolean;
   error: any;
+
+  selectedTransportationRequests: TransportationRequest | undefined;
 }
 
 export const transportationRequestsInitialState: TransportationRequestsState = {
   transportationRequests: [],
   isLoading: false,
   error: undefined,
+
+  selectedTransportationRequests: undefined,
 };
 
 const transportationRequestsSlice = createSlice({
@@ -30,6 +34,9 @@ const transportationRequestsSlice = createSlice({
       .addCase(GetTransportationRequests.failureAction, (state, { payload }) => {
         state.isLoading = false;
         state.error = payload;
+      })
+      .addCase(SelectTransportationRequest, (state, { payload }) => {
+        state.selectedTransportationRequests = state.transportationRequests.find(({ id }) => id === payload);
       });
   },
 });

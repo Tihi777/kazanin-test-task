@@ -3,6 +3,7 @@
   height: 100vh;
 }
 
-.leaflet-control-attribution {
+.leaflet-control-attribution,
+.leaflet-routing-container {
   display: none;
 }

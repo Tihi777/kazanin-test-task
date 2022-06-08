@@ -1,6 +1,8 @@
+import { Destination } from './destination';
+
 export interface TransportationRequest {
   id: number;
   date: number;
-  departurePlace: any;
-  arrivalPlace: any;
+  departurePlace: Destination;
+  arrivalPlace: Destination;
 }

@@ -25,7 +25,7 @@ function createIds<T extends string = string>(baseId: T) {
   };
 }
 
-export function createTriAction<TAction = void, TResult = void, TError = any, T extends string = string>(baseId: T) {
+export function buildTriAction<TAction = void, TResult = void, TError = any, T extends string = string>(baseId: T) {
   const ids = createIds(baseId);
   return {
     base: createAction(ids.base, (payload: TAction) => ({ payload })),

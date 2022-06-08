@@ -1,4 +1,4 @@
-import { createTriAction } from '../helpers';
+import { buildTriAction } from '../helpers';
 import { Destination } from '../../models/destination';
 
-export const GetDestinations = createTriAction<void, Destination[]>('Get Destinations');
+export const GetDestinations = buildTriAction<void, Destination[]>('Get Destinations');
