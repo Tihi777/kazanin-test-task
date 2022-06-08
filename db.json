@@ -2,17 +2,153 @@
   "requests": [
     {
       "id": 1,
-      "title": "Test Request"
+      "departurePlace": {
+        "id": 1,
+        "title": "Москва",
+        "coordinates": [55.755773, 37.617761]
+      },
+      "arrivalPlace": {
+        "id": 4,
+        "title": "Томск",
+        "coordinates": [56.495116, 84.972128]
+      }
+    },
+    {
+      "id": 2,
+      "departurePlace": {
+        "id": 3,
+        "title": "Новосибирск",
+        "coordinates": [55.028739, 82.90692799999999]
+      },
+      "arrivalPlace": {
+        "id": 7,
+        "title": "Челябинск",
+        "coordinates": [55.159774, 61.402455]
+      }
+    },
+    {
+      "id": 3,
+      "departurePlace": {
+        "id": 9,
+        "title": "Уфа",
+        "coordinates": [54.734768, 55.957838]
+      },
+      "arrivalPlace": {
+        "id": 2,
+        "title": "Санкт-Петербург",
+        "coordinates": [59.938806, 30.314278]
+      }
+    },
+    {
+      "id": 4,
+      "departurePlace": {
+        "id": 10,
+        "title": "Омск",
+        "coordinates": [54.989342, 73.368212]
+      },
+      "arrivalPlace": {
+        "id": 13,
+        "title": "Пермь",
+        "coordinates": [58.004785, 56.237654]
+      }
+    },
+    {
+      "id": 5,
+      "departurePlace": {
+        "id": 14,
+        "title": "Волгоград",
+        "coordinates": [48.707103, 44.516939]
+      },
+      "arrivalPlace": {
+        "id": 5,
+        "title": "Екатеринбург",
+        "coordinates": [56.838002, 60.597295]
+      }
+    },
+    {
+      "id": 6,
+      "departurePlace": {
+        "id": 8,
+        "title": "Ростов-на-Дону",
+        "coordinates": [47.227151, 39.744972]
+      },
+      "arrivalPlace": {
+        "id": 9,
+        "title": "Уфа",
+        "coordinates": [54.734768, 55.957838]
+      }
     }
   ],
   "destinations": [
     {
       "id": 1,
-      "title": "Test Destination"
+      "title": "Москва",
+      "coordinates": [55.755773, 37.617761]
     },
     {
       "id": 2,
-      "title": "Test Destination 2"
+      "title": "Санкт-Петербург",
+      "coordinates": [59.938806, 30.314278]
+    },
+    {
+      "id": 3,
+      "title": "Новосибирск",
+      "coordinates": [55.028739, 82.90692799999999]
+    },
+    {
+      "id": 4,
+      "title": "Томск",
+      "coordinates": [56.495116, 84.972128]
+    },
+    {
+      "id": 5,
+      "title": "Екатеринбург",
+      "coordinates": [56.838002, 60.597295]
+    },
+    {
+      "id": 6,
+      "title": "Нижний Новгород",
+      "coordinates": [56.323902, 44.002267]
+    },
+    {
+      "id": 7,
+      "title": "Челябинск",
+      "coordinates": [55.159774, 61.402455]
+    },
+    {
+      "id": 8,
+      "title": "Ростов-на-Дону",
+      "coordinates": [47.227151, 39.744972]
+    },
+    {
+      "id": 9,
+      "title": "Уфа",
+      "coordinates": [54.734768, 55.957838]
+    },
+    {
+      "id": 10,
+      "title": "Омск",
+      "coordinates": [54.989342, 73.368212]
+    },
+    {
+      "id": 11,
+      "title": "Красноярск",
+      "coordinates": [56.008691, 92.870529]
+    },
+    {
+      "id": 12,
+      "title": "Воронеж",
+      "coordinates": [51.661535, 39.200287]
+    },
+    {
+      "id": 13,
+      "title": "Пермь",
+      "coordinates": [58.004785, 56.237654]
+    },
+    {
+      "id": 14,
+      "title": "Волгоград",
+      "coordinates": [48.707103, 44.516939]
     }
   ]
 }
