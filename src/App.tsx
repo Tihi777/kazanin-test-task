@@ -1,12 +1,8 @@
-import React from "react";
-import { TransportationRequestsPage } from "./modules/transportation-requests";
+import React from 'react';
+import { TransportationRequestsPage } from './modules/transportation-requests';
 
 function App() {
-  return (
-    <div>
-      <TransportationRequestsPage />
-    </div>
-  );
+  return <TransportationRequestsPage />;
 }
 
 export default App;

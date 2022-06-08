@@ -1,10 +1,14 @@
-import { FC } from "react";
-import { Map } from "../../shared/components";
+import { FC } from 'react';
+
+import { Split } from '@geoffcox/react-splitter';
+import { Map } from '../../shared/components';
+import { TransportationRequests } from './components/transportation-requests/transportation-requests';
 
 export const TransportationRequestsPage: FC = () => {
   return (
-    <div>
+    <Split initialPrimarySize="40%" minPrimarySize="300px" resetOnDoubleClick>
+      <TransportationRequests />
       <Map />
-    </div>
+    </Split>
   );
 };
