@@ -1,6 +1,6 @@
-import { FC } from "react";
-import { MapContainer, TileLayer } from "react-leaflet";
-import "./map.scss";
+import { FC } from 'react';
+import { MapContainer, TileLayer } from 'react-leaflet';
+import './map.scss';
 
 export const Map: FC = () => {
   return (

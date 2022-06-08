@@ -1,10 +1,10 @@
-import Axios, { AxiosInstance, AxiosRequestConfig } from "axios";
+import Axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 
 class HttpServiceImpl {
-  private baseUrl: string = "";
+  private baseUrl: string = '';
   private _client!: AxiosInstance;
 
-  constructor(url: string = "") {
+  constructor(url: string = '') {
     this._client = Axios.create(this.mergeConfig());
     this.baseUrl = url;
   }
@@ -19,12 +19,11 @@ class HttpServiceImpl {
 
   private mergeConfig(config?: AxiosRequestConfig) {
     return {
+      baseURL: this.baseUrl,
       ...config,
       headers: {
-        "cache-control": "no-cache",
         ...config?.headers,
       },
-      baseURL: this.baseUrl,
     } as AxiosRequestConfig;
   }
 }
