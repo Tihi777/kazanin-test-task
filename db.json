@@ -1,0 +1,18 @@
+{
+  "requests": [
+    {
+      "id": 1,
+      "title": "Test Request"
+    }
+  ],
+  "destinations": [
+    {
+      "id": 1,
+      "title": "Test Destination"
+    },
+    {
+      "id": 2,
+      "title": "Test Destination 2"
+    }
+  ]
+}
